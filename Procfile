@@ -1,0 +1,1 @@
+web: gunicorn textsculpture:app --log-file=-
