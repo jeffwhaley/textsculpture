@@ -16,6 +16,16 @@ def sms():
 	body = request.values.get('Body', None)
 	sms = body.lower()
 	print sms
+	rgba = tinycss2.color3.parse_color(sms)
+	
+	if rgba is None:
+		return Response("Sorry, I don't recognize this color",  mimetype='text/plain')
+		
+	if len(rgba) == 4:
+		red = int(round(255*rgba[0]))
+		green = int(round(255*rgba[1]))
+		blue = int(round(255*rgba[2]))
+		rgba_string = '[{0:03d},{1:03d},{2:03d}]'.format(red, green, blue)
 
 if __name__ == '__main__':
 	app.run
