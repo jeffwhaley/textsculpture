@@ -19,7 +19,7 @@ def sms():
 	
 	if rgba is None:
 		print 'Not a valid color'
-		return Response('Sorry, I don't recognize this color',  mimetype='text/plain')
+		return Response("Sorry, I don't recognize this color",  mimetype='text/plain')
 		
 	if len(rgba) == 4:
 		red = int(round(255*rgba[0]))
