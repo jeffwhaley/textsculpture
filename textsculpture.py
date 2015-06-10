@@ -28,9 +28,9 @@ def sms():
 		rgba_string = '[{0:03d},{1:03d},{2:03d}]'.format(red, green, blue)
 		print 'color=' + rgba_string
 		
-		print os.environ['SPARK_ACCESS_TOKEN']
 		payload = {'access_token':os.environ['SPARK_ACCESS_TOKEN'], 'command':rgb_string}
 		r = requests.post("https://api.spark.io/v1/devices/{0}/color".format(os.environ['SPARK_CORE_ID']), data = payload)
+		return Response(mimetype='text/plain')
 
 if __name__ == '__main__':
 	app.run
