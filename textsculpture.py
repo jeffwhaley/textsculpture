@@ -27,6 +27,8 @@ def sms():
 	else:
 		data_string = 'error'
 		
+	print 'command sent =' + data_string
+		
 	payload = {'access_token':os.environ['SPARK_ACCESS_TOKEN'], 'command':data_string}
 	r = requests.post("https://api.spark.io/v1/devices/{0}/color".format(os.environ['SPARK_CORE_ID']), data = payload)
 	return Response(mimetype='text/plain')
