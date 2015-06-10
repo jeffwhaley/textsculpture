@@ -16,7 +16,6 @@ def sms():
 	sms = body.lower()
 	print sms
 	rgba = tinycss2.color3.parse_color(sms)
-	print 'len rgba=' + str(len(rgba))
 	
 	if rgba is None:
 		print 'Not a valid color'

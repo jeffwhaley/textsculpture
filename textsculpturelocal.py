@@ -14,14 +14,17 @@ from tinycss2 import color3
 #@app.route('/sms', methods=['POST'])
 #def sms():
 #	body = request.values.get('Body', None)
-body = 'blue'
+body = 'test'
 sms = body.lower()
 print sms
 rgba = tinycss2.color3.parse_color(sms)
-print 'len rgba=' + str(len(rgba))
+#print 'len rgba=' + str(len(rgba))
+
+print "rgba is none= " + str(rgba is None)
 
 if rgba is None:
 	print 'Not a valid color'
+	exit()
 #		return Response("Sorry, I don't recognize this color",  mimetype='text/plain')
 	
 if len(rgba) == 4:
