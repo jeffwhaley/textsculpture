@@ -10,11 +10,11 @@ app = Flask(__name__)
 def merry_christmas():
   return 'Merry Christmas!'
   
-@app.route('/sms', methods=['POST'])
+@app.route('/color', methods=['POST'])
 def sms():
 	body = request.values.get('Body', None)
 	sms = body.lower()
-	print 'sms=' + sms
+	print 'color=' + sms
 	rgba = tinycss2.color3.parse_color(sms)
 	
 	if rgba is None:
